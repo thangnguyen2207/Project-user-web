@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+		layout:decorate="~{layout/layout}">
+	<head>
+		<title>Giỏ hàng</title>
+	</head>
+	<body>
+		<div layout:fragment="content">
+			<div
+		      class="hero-wrap hero-bread"
+		      style="background-image: url('images/bg_1.jpg')"
+		    >
+		      <div class="container">
+		        <div
+		          class="row no-gutters slider-text align-items-center justify-content-center"
+		        >
+		          <div class="col-md-9 ftco-animate text-center">
+		            <p class="breadcrumbs">
+		              <span class="mr-2"><a href="index.html">Trang chủ</a></span>
+		              <span>Giỏ hàng</span>
+		            </p>
+		            <h1 class="mb-0 bread">Giỏ hàng của tôi</h1>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+		
+		    <section class="ftco-section ftco-cart">
+		      <div class="container">
+		        <div class="row">
+		          <div class="col-md-12 ftco-animate">
+		            <div class="table-responsive" style="outline: 1px solid #82ae46;">
+		              <table class="table">
+		                <thead class="thead-primary">
+		                  <tr class="text-center">
+		                    <th>&nbsp;</th>
+		                    <th>&nbsp;</th>
+		                    <th>Tên sản phẩm</th>
+		                    <th>Giá</th>
+		                    <th>Số lượng</th>
+		                    <th>Tổng</th>
+		                  </tr>
+		                </thead>
+		                <tbody id="pro-list">
+		                </tbody>
+		              </table>
+		              <div id="empty-list" class="text-center pb-3">Không có gì trong giỏ hàng</div>
+		            </div>
+		          </div>
+		        </div>
+		        <div class="row justify-content-end">
+		          <div class="col-xl-7 mt-5 ftco-animate">
+		            <form action="#" class="billing-form">
+		              <h3 class="mb-4 billing-heading">Thông tin đặt hàng</h3>
+		              <div class="row align-items-end">
+		                <div class="col-md-6">
+		                  <div class="form-group">
+		                    <label for="firstname">Tên</label>
+		                    <input type="text" class="form-control" placeholder="" />
+		                  </div>
+		                </div>
+		                <div class="col-md-6">
+		                  <div class="form-group">
+		                    <label for="lastname">Họ</label>
+		                    <input type="text" class="form-control" placeholder="" />
+		                  </div>
+		                </div>
+		                <div class="w-100"></div>
+		                <div class="col-md-12">
+		                  <div class="form-group">
+		                    <label for="country">Quốc gia</label>
+		                    <div class="select-wrap">
+		                      <div class="icon">
+		                        <span class="ion-ios-arrow-down"></span>
+		                      </div>
+		                      <select name="" id="" class="form-control">
+		                        <option value="">France</option>
+		                        <option value="">Italy</option>
+		                        <option value="">Philippines</option>
+		                        <option value="">South Korea</option>
+		                        <option value="">Hongkong</option>
+		                        <option value="">Japan</option>
+		                      </select>
+		                    </div>
+		                  </div>
+		                </div>
+		                <div class="w-100"></div>
+		                <div class="col-md-6">
+		                  <div class="form-group">
+		                    <label for="streetaddress">Địa chỉ</label>
+		                    <input
+		                      type="text"
+		                      class="form-control"
+		                      placeholder="Số nhà, tên đường"
+		                    />
+		                  </div>
+		                </div>
+		                <div class="col-md-6">
+		                  <div class="form-group">
+		                    <input
+		                      type="text"
+		                      class="form-control"
+		                      placeholder="Quận, huyện"
+		                    />
+		                  </div>
+		                </div>
+		                <div class="w-100"></div>
+		                <div class="col-md-6">
+		                  <div class="form-group">
+		                    <label for="towncity">Thành phố</label>
+		                    <input type="text" class="form-control" placeholder="" />
+		                  </div>
+		                </div>
+		                <div class="col-md-6">
+		                  <div class="form-group">
+		                    <label for="postcodezip">Mã bưu chính</label>
+		                    <input type="text" class="form-control" placeholder="" />
+		                  </div>
+		                </div>
+		                <div class="w-100"></div>
+		                <div class="col-md-6">
+		                  <div class="form-group">
+		                    <label for="phone">Số điện thoại</label>
+		                    <input type="text" class="form-control" placeholder="" />
+		                  </div>
+		                </div>
+		                <div class="col-md-6">
+		                  <div class="form-group">
+		                    <label for="emailaddress"> Email</label>
+		                    <input type="text" class="form-control" placeholder="" />
+		                  </div>
+		                </div>
+		                <div class="w-100"></div>
+		                <div class="col-md-12">
+		                  <div class="form-group mt-4">
+		                    <div class="radio">
+		                      <label class="mr-3"
+		                        ><input type="radio" name="optradio" /> Create an
+		                        Account?
+		                      </label>
+		                      <label
+		                        ><input type="radio" name="optradio" /> Ship to
+		                        different address</label
+		                      >
+		                    </div>
+		                  </div>
+		                </div>
+		              </div>
+		            </form>
+		            <!-- END -->
+		          </div>
+		          <div class="col-xl-5">
+		            <div class="row mt-5 pt-3">
+		              <div class="col-md-12 d-flex mb-5">
+		                <div class="cart-detail cart-total p-3 p-md-4">
+		                  <h3 class="billing-heading mb-4">Hoá đơn</h3>
+		                  <p class="d-flex">
+		                    <span>Đơn giá</span>
+		                    <span>$20.60</span>
+		                  </p>
+		                  <p class="d-flex">
+		                    <span>Phí giao hàng</span>
+		                    <span>$0.00</span>
+		                  </p>
+		                  <p class="d-flex">
+		                    <span>Giảm giá</span>
+		                    <span>$3.00</span>
+		                  </p>
+		                  <hr />
+		                  <p class="d-flex total-price">
+		                    <span>Tổng cộng</span>
+		                    <span>$17.60</span>
+		                  </p>
+		                </div>
+		              </div>
+		              <div class="col-md-12">
+		                <div class="cart-detail p-3 p-md-4">
+		                  <h3 class="billing-heading mb-4">Phương thức thanh toán</h3>
+		                  <div class="form-group">
+		                    <div class="col-md-12">
+		                      <div class="radio">
+		                        <label
+		                          ><input type="radio" name="optradio" class="mr-2" />
+		                          Chuyển khoản ngân hàng</label
+		                        >
+		                      </div>
+		                    </div>
+		                  </div>
+		                  <div class="form-group">
+		                    <div class="col-md-12">
+		                      <div class="radio">
+		                        <label
+		                          ><input type="radio" name="optradio" class="mr-2" />
+		                          Phương thức thanh toán khác</label
+		                        >
+		                      </div>
+		                    </div>
+		                  </div>
+		                  <div class="form-group">
+		                    <div class="col-md-12">
+		                      <div class="radio">
+		                        <label
+		                          ><input type="radio" name="optradio" class="mr-2" />
+		                          Paypal</label
+		                        >
+		                      </div>
+		                    </div>
+		                  </div>
+		                  <div class="form-group">
+		                    <div class="col-md-12">
+		                      <div class="checkbox">
+		                        <label
+		                          ><input type="checkbox" value="" class="mr-2" />Tôi đã đọc và đồng ý với các điều khoản, điều kiện </label
+		                        >
+		                      </div>
+		                    </div>
+		                  </div>
+		                  <p>
+		                    <a href="#" class="btn btn-primary py-3 px-4"
+		                      >Đặt hàng</a
+		                    >
+		                  </p>
+		                </div>
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+		    </section>
+		    	
+		    <!-- Subcribe -->
+		    <section layout:replace="~{layout/subcribe::subcribe}"></section>
+		    
+		    <script type="text/javascript">
+		    	window.onload = function () {
+		    		getCartItems();
+		    	}
+		    </script>
+		</div>
+	</body>
+</html>

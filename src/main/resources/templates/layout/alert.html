@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<head></head>
+	<body>
+		<div layout:fragment="cart-alert" class="position-fixed text-center" style="top: 35%; left: 43.4%; z-index: 100">
+			<div id="cart-success" class="alert alert-secondary d-none" role="alert">
+				<p><i class="ion-ios-checkmark-circle-outline text-success" style="font-size: 50px;"></i></p>
+				<p class="text-muted">Đã thêm vào giỏ hàng</p>
+			</div>
+			
+			<div id="wishlist-success" class="alert alert-secondary d-none" role="alert">
+				<p><i class="ion-ios-checkmark-circle-outline text-success" style="font-size: 50px;"></i></p>
+				<p class="text-muted">Đã thêm vào yêu thích</p>
+			</div>
+		</div>
+	</body>
+</html>

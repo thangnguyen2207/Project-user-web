@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+		layout:decorate="~{layout/layout}">
+	<head>
+		<title>Yêu thích</title>
+	</head>
+	<body>
+		<div layout:fragment="content">
+			<div
+		      class="hero-wrap hero-bread"
+		      style="background-image: url('images/bg_1.jpg')"
+		    >
+		      <div class="container">
+		        <div
+		          class="row no-gutters slider-text align-items-center justify-content-center"
+		        >
+		          <div class="col-md-9 ftco-animate text-center">
+		            <p class="breadcrumbs">
+		              <span class="mr-3"><a href="index.html">Trang chủ</a></span>
+		              <span>Yêu thích</span>
+		            </p>
+		            <h1 class="mb-0 bread">Mục yêu thích</h1>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+		
+		    <section class="ftco-section">
+		      <div class="container">
+		        <div id="product-list" class="row">
+		          
+		        </div>
+		        <div id="empty-list" class="text-center pb-3">Không có gì trong mục này</div>
+		      </div>
+		    </section>
+		    
+		    <!-- Subscribe -->
+		    <section layout:replace="~{layout/subcribe::subcribe}"></section>
+		    
+		    <script type="text/javascript">
+		    	window.onload = function () {
+		    		getWishlistItems();
+		    	}
+		    </script>
+		</div>
+	</body>
+</html>

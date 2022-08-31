@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+		layout:decorate="~{layout/layout}">
+	<head>
+		<title>Cửa hàng</title>
+		<style type="text/css">
+			.page-load-status {
+			  display: none; /* hidden by default */
+			  padding-top: 20px;
+			  border-top: 1px solid #DDD;
+			  text-align: center;
+			  color: #777;
+			}
+		</style>
+	</head>
+	<body>
+		<div layout:fragment="content">
+			<div
+		      class="hero-wrap hero-bread"
+		      style="background-image: url('images/bg_1.jpg')"
+		    >
+		      <div class="container">
+		        <div
+		          class="row no-gutters slider-text align-items-center justify-content-center"
+		        >
+		          <div class="col-md-9 ftco-animate text-center">
+		            <p class="breadcrumbs">
+		              <span class="mr-2"><a href="index.html">Trang chủ</a></span>
+		              <span>Sản phẩm</span>
+		            </p>
+		            <h1 class="mb-0 bread">Sản phẩm</h1>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+		
+		    <section class="ftco-section">
+		      <div class="container">
+		        <div class="row mb-5">
+		          <div class="col-12 col-md-8">
+		            <ul class="product-category pl-0">
+		              <li><a href="/shop" name="quickSearch" class="active">Tât cả</a></li>
+		              <li th:each="item: ${productGroup}">
+		              	<a th:id="${item.nhTen}" name="quickSearch" th:href="'/shop/' + ${item.nhTen}" th:text="${item.nhTen}"></a>
+		              </li>
+		            </ul>
+		          </div>
+		          <div class="col-12 col-md-4 input-group">
+		          	<input class="form-control" type="text" placeholder="Bạn đang cần gì?" 
+		          	  style="height: 35px !important; font-size: 15px">
+		          	<div class="input-group-append" style="height: 35px !important;">
+		          	  <span class="input-group-text">
+		          	  	<i class="ion-ios-search" style="font-size: 20px"></i>
+		          	  </span>
+		          	</div>
+		          </div>
+		        </div>
+		        
+		        <div id="product-list" class="row">
+		          
+		        </div>
+		        <div id="proLoader" class="d-none">
+		        	<div class="d-flex justify-content-center py-3">
+					  <div class="spinner-border text-success" role="status">
+					    <span class="visually-hidden"></span>
+					  </div>
+					</div>
+		        </div>
+		        <div class="text-center pt-3">
+		        	<button id="showBtn" type="button" class="btn btn-primary">Xem thêm</button>
+		        	<p id="end" class="d-none text-center"> ------ Hết ------</p>
+		        </div>
+		      </div>
+		    </section>
+		    
+		    <!-- Subcribe -->
+		    <section layout:replace="~{layout/subcribe::subcribe}"></section>
+		    
+		    <script th:inline="javascript">		    
+		    	window.onload = function() {
+		    		loadContent();
+		    	}
+		    	
+		    	document.getElementById("showBtn").onclick = function () {
+		    		loadContent();
+		    	}
+		    	
+		    	function loadContent() {
+		    		let key = window.location.search == '' ? '' : decodeURIComponent(window.location.search.split("&")[0].split("=")[1].replaceAll("+", " "));
+		    		let navigate = document.getElementsByName("quickSearch");
+		    		for (let i=0; i<navigate.length; i++) {
+		    			if (navigate[i].id == key) {
+		    				navigate[i].classList.add("active");
+		    			} else {
+		    				navigate[i].classList.remove("active");
+		    			}
+		    		}
+		    		getProductItems(key, $("#product-list").children().length, 12);
+		    	}
+		    </script>
+		</div>
+	</body>
+</html>

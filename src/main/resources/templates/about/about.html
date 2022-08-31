@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+		layout:decorate="~{layout/layout}">
+	<head>
+		<title>Về chúng tôi</title>
+	</head>
+	<body>
+    	<div layout:fragment="content">
+    		<div
+		      class="hero-wrap hero-bread"
+		      style="background-image: url('images/bg_1.jpg')"
+		    >
+		      <div class="container">
+		        <div
+		          class="row no-gutters slider-text align-items-center justify-content-center"
+		        >
+		          <div class="col-md-9 ftco-animate text-center">
+		            <p class="breadcrumbs">
+		              <span class="mr-2"><a href="index.html">Trang chủ</a></span>
+		              <span>Về chúng tôi</span>
+		            </p>
+		            <h1 class="mb-0 bread">Về chúng tôi</h1>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+		
+		    <section class="ftco-section ftco-no-pb ftco-no-pt bg-light">
+		      <div class="container">
+		        <div class="row">
+		          <div
+		            class="col-md-5 p-md-5 img img-2 d-flex justify-content-center align-items-center"
+		            style="background-image: url(images/about.jpg)"
+		          >
+		            <a
+		              href="https://vimeo.com/45830194"
+		              class="icon popup-vimeo d-flex justify-content-center align-items-center"
+		            >
+		              <span class="icon-play"></span>
+		            </a>
+		          </div>
+		          <div class="col-md-7 py-5 wrap-about pb-md-5 ftco-animate">
+		            <div class="heading-section-bold mb-4 mt-md-5">
+		              <div class="ml-md-0">
+		                <h2 class="mb-4">Chào mừng bạn đến với Vegefoods, một trang web Thương mại điện tử</h2>
+		              </div>
+		            </div>
+		            <div class="pb-md-5">
+		              <p>
+		                Ngày nay, thực phẩm an toàn luôn là mối quan tâm hàng đầu của người tiêu dùng. 
+		                Nắm bắt nhu cầu đó, chúng tôi đã lựa chọn mô hình sản xuất rau an toàn theo quy trình 
+		                VietGAP và cung cấp thực phẩm sạch, an toàn, chất lượng . 
+		              </p>
+		              <p>
+		                Chúng tôi chuyên cung cấp tất cả các mặt hàng RAU, CỦ, QUẢ, TRÁI CÂY, Cho nhà hàng, siêu thị,
+		                 căn tin công ty, trường học… Với nhiều năm  kinh nghiệm trong ngành nghề. Chúng tôi biết cách
+		                 lựa chọn ra những loại rau sạch, tươi ngon và an toàn. Mặt hàng đã được sơ chế phù hợp nhất
+		                 trong từng loại rau tạo sự tiện lợi trong chế biến cho nhà bếp.
+		              </p>
+		              <p><a href="#" class="btn btn-primary">Mua sắm ngay bây giờ</a></p>
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+		    </section>
+		
+		    <!-- Subcribe -->
+		    <section layout:replace="~{layout/subcribe::subcribe}"></section>
+		
+		    <section
+		      class="ftco-section ftco-counter img"
+		      id="section-counter"
+		      style="background-image: url(images/bg_3.jpg)"
+		    >
+		      <div class="container">
+		        <div class="row justify-content-center py-5">
+		          <div class="col-md-10">
+		            <div class="row">
+		              <div
+		                class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate"
+		              >
+		                <div class="block-18 text-center">
+		                  <div class="text">
+		                    <strong class="number" data-number="10000">0</strong>
+		                    <span>Khách hàng hạnh phúc</span>
+		                  </div>
+		                </div>
+		              </div>
+		              <div
+		                class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate"
+		              >
+		                <div class="block-18 text-center">
+		                  <div class="text">
+		                    <strong class="number" data-number="100">0</strong>
+		                    <span>Chi nhánh</span>
+		                  </div>
+		                </div>
+		              </div>
+		              <div
+		                class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate"
+		              >
+		                <div class="block-18 text-center">
+		                  <div class="text">
+		                    <strong class="number" data-number="1000">0</strong>
+		                    <span>Bạn đồng hành</span>
+		                  </div>
+		                </div>
+		              </div>
+		              <div
+		                class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate"
+		              >
+		                <div class="block-18 text-center">
+		                  <div class="text">
+		                    <strong class="number" data-number="100">0</strong>
+		                    <span>Giải thưởng</span>
+		                  </div>
+		                </div>
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+		    </section>
+		
+		    <!-- Testimoni -->
+		    <section layout:replace="~{layout/testimoni::testimoni}"></section>
+			
+			<!-- Criteria -->
+			<section layout:replace="~{layout/criteria::criteria}"></section>
+	    		
+    	</div>	
+    </body>
+</html>
